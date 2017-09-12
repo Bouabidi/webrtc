@@ -1,5 +1,4 @@
 
-//var debug = require('debug')('Server:server');
 var http = require('http');
 var express = require('express');
 var app = express();
