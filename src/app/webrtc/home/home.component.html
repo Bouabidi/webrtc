@@ -1,0 +1,94 @@
+<div class="navbar navbar-fixed-top navbar-default" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">WebRTC</a>
+        </div>
+        <!-- /.nav-collapse -->
+    </div>
+    <!-- /.container -->
+</div>
+<!-- /.navbar -->
+
+<div class="container-fluid">
+    <div class="row row-offcanvas row-offcanvas-left">
+        <div class="col-xs-4 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+            <div class="sidebar-nav">
+                <br>
+                <br>
+                <br>
+                <div class="row">
+                <h3>Online Users</h3>
+                <br>
+                <ul *ngFor="let user of users" class="nav">
+                    <li><a href="#/user/{{ user }}">{{ user }}</a></li>
+                    <li class="nav-divider"></li>
+                </ul>
+                </div>
+                <!--<div class="col-xs-4 col-sm-3">-->
+                <div class="row">
+                    <br>
+                    <br>
+                    <br>
+                     <h3>Public chat</h3>
+                                        <br>
+                                        <br>
+                                        <br>
+                                      <div *ngFor="let message of messages">
+                                        <strong>{{message.user}}</strong>
+                                        {{message.text}}
+                                      </div>
+                                      <br>  
+                                      <hr>
+                                      <input type="text" placeholder="Enter message" [(ngModel)]="message" name="message" (keyup.enter)="sendMessage()">
+                                      <br>
+
+                                                                         
+                </div>
+                <br>
+                <br>
+                <br>
+                <div class="row">
+                            <div id="UploadBox">
+                                    <h3>Video Uploader</h3>
+                                    <span id='UploadArea'>
+                                        <label for="FileBox">Choose A File: </label><input type="file" id="FileBox"><br>
+                                        <button  type='button' id='UploadButton' class='Button'>Upload</button>
+                                    </span>
+                            </div>
+                </div>
+
+            </div>
+            <!--/.well -->
+        </div>
+        <!--/span-->
+
+        <div class="col-xs-10 col-sm-6">
+            <br>
+                <br>
+                    <br>
+                        <br>
+            <h3>
+            Texte können mithilfe einer Schrift dargestellt werden, deren Zeichen Phoneme, Silben oder Wörter bzw. Begriffe codieren. Verschiedene Kulturen verwenden hierzu unterschiedliche Alphabete. Durch die Einführung der Schrift wurde eine Möglichkeit geschaffen, Texte, wie zum Beispiel Geschichtsschreibung, Erzählungen und Sagen, für die Nachwelt zu archivieren. Ein großer Teil des geschichtlichen Wissens stammt aus schriftlichen Aufzeichnungen, die archiviert wurden oder zufällig erhalten blieben. Texte aus Kulturen mit einer schriftlichen Überlieferungstradition unterscheiden sich in ihrem Aufbau von Texten aus Kulturen, in denen die mündliche Überlieferung eine größere Rolle spielt. In den Geisteswissenschaften werden Kulturen, von denen keine schriftlichen Dokumente überliefert sind, der Vor- und Frühgeschichte zugerechnet. Somit wird eine zwar indirekte, aber dennoch sehr bedeutsame Definition des Gegenstandes der Geschichtswissenschaft durch die Überlieferung von Texten gegeben.
+
+            </h3>
+        </div>
+        <div class="col-xs-4 col-sm-3">
+            <br>
+            <br>
+            <div class="jumbotron">
+
+                <router-outlet></router-outlet>
+               
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<!--/.container-->
+
+
+
